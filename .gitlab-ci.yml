@@ -1,11 +1,17 @@
 image: node:latest
 
 stages:
+  - lint
   - test
 
 cache:
   paths:
     - node_modules/
+
+lint:
+  script:
+    - yarn install
+    - yarn lint
 
 test:
   script:
