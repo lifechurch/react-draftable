@@ -1,0 +1,7 @@
+.ToolbarGroup-root {
+    display: flex;
+}
+
+.ToolbarGroup-root:not(:first-of-type):not(:last-of-type) {
+    margin: 0 14px;
+}

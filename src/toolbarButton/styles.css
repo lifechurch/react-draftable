@@ -1,0 +1,10 @@
+.ToolbarButton-root {
+    border: none;
+    background: none;
+    margin: 0 8px;
+    padding: 0;
+}
+
+.ToolbarButton-root:first-of-type {
+    margin-left: 0;
+}
