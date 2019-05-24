@@ -15,7 +15,7 @@ lint:
     - yarn lint
 
 test:
-  stag: test
+  stage: test
   script:
     - yarn install
     - yarn test
