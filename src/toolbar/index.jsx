@@ -1,21 +1,21 @@
 // @flow
 import React from 'react';
 import './styles.css';
-import { EditorState, RichUtils } from 'draft-js';
+import { EditorState } from 'draft-js';
 import ToolbarGroup from '../toolbarGroup';
 import type { ToolbarButtonType } from '../toolbarButton';
 
 import { BLOCK_TYPES_LISTS, BLOCK_TYPES_INLINE, BLOCK_TYPES_INDENT } from '../lib/BlockTypes';
 
+export type ToolbarConfigType = {
+  groups: Array<string>,
+  [string]: Array<ToolbarButtonType>
+};
+
 type ToolbarProps = {
   editorState: EditorState,
   toolbarConfig: ToolbarConfigType,
   onChange: (ToolbarButtonType) => void,
-};
-
-export type ToolbarConfigType = {
-  groups: Array<string>,
-  [string]: Array<ToolbarButtonType>
 };
 
 export const defaultToolbarConfig:ToolbarConfigType = {
@@ -26,7 +26,7 @@ export const defaultToolbarConfig:ToolbarConfigType = {
 };
 
 export default ({ editorState, toolbarConfig, onChange }:ToolbarProps) => {
-  const handleToggle = (item) => onChange(item);
+  const handleToggle = item => onChange(item);
   return (
     <div className="Toolbar-root">
       {
@@ -34,4 +34,4 @@ export default ({ editorState, toolbarConfig, onChange }:ToolbarProps) => {
       }
     </div>
   );
-}
+};

@@ -8,7 +8,7 @@
     "dev": "parcel ./src/index.html",
     "flow": "flow",
     "lint": "eslint --ext .jsx,.js src/",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "semantic-release": "semantic-release"
   },
   "repository": {
@@ -41,6 +41,7 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.8.0",
     "commitizen": "^3.1.1",
     "cross-env": "^5.2.0",
     "cz-conventional-changelog": "2.1.0",
@@ -53,6 +54,7 @@
     "eslint-plugin-react": "^7.13.0",
     "flow-bin": "^0.98.1",
     "husky": "^2.3.0",
+    "jest": "^24.8.0",
     "parcel-bundler": "^1.12.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
