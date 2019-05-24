@@ -30,6 +30,8 @@
         }
     },
     "rules": {
-        "react/require-default-props": 0
+        "react/require-default-props": 0,
+        "max-len": "off",
+        "no-useless-return": "off"
     }
 }

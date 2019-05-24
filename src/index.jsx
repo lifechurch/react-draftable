@@ -8,7 +8,6 @@ import type { DraftEditorCommand } from 'draft-js/lib/DraftEditorCommand';
 import Toolbar, { defaultToolbarConfig, type ToolbarConfigType } from './toolbar';
 import 'draft-js/dist/Draft.css';
 import type { ToolbarButtonType } from './toolbarButton';
-import DraftableState from './lib/DraftableState';
 
 type DraftableProps = {
   initialState?: EditorState,
@@ -63,11 +62,13 @@ const Draftable = (
 
   const handleToolbarButton = (item:ToolbarButtonType) => {
     switch (item.toggle) {
-      case "inline":
+      case 'inline':
         setEditorState(RichUtils.toggleInlineStyle(editorState, item.style));
         return;
-      case "block":
+      case 'block':
         setEditorState(RichUtils.toggleBlockType(editorState, item.style));
+        return;
+      default:
         return;
     }
   };
@@ -85,7 +86,7 @@ const Draftable = (
   );
 };
 
-ReactDOM.render(<Draftable onChange={state => console.log(DraftableState.toString(state.getCurrentContent(), 'markdown'))} />, document.getElementById('root'));
+ReactDOM.render(<Draftable />, document.getElementById('root'));
 
 // Hot Module Replacement
 if (module.hot) {

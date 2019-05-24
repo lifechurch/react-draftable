@@ -10,14 +10,24 @@ import Outdent from '../icons/Outdent';
 import type { ToolbarButtonType } from '../toolbarButton';
 
 export const BLOCK_TYPES_INLINE:Array<ToolbarButtonType> = [
-  { label: 'B', style: 'BOLD', Icon: BoldIcon, toggle: 'inline' },
-  { label: 'I', style: 'ITALIC', Icon: ItalicIcon, toggle: 'inline' },
-  { label: 'U', style: 'UNDERLINE', Icon: UnderlineIcon, toggle: 'inline' },
+  {
+    label: 'B', style: 'BOLD', Icon: BoldIcon, toggle: 'inline',
+  },
+  {
+    label: 'I', style: 'ITALIC', Icon: ItalicIcon, toggle: 'inline',
+  },
+  {
+    label: 'U', style: 'UNDERLINE', Icon: UnderlineIcon, toggle: 'inline',
+  },
 ];
 
 export const BLOCK_TYPES_LISTS:Array<ToolbarButtonType> = [
-  { label: 'UL', style: 'unordered-list-item', Icon: BulletedList, toggle: 'block'},
-  { label: 'OL', style: 'ordered-list-item', Icon: NumberedList, toggle: 'block' },
+  {
+    label: 'UL', style: 'unordered-list-item', Icon: BulletedList, toggle: 'block',
+  },
+  {
+    label: 'OL', style: 'ordered-list-item', Icon: NumberedList, toggle: 'block',
+  },
 ];
 
 export const BLOCK_TYPE_HEADINGS:Array<ToolbarButtonType> = [
@@ -30,6 +40,10 @@ export const BLOCK_TYPE_HEADINGS:Array<ToolbarButtonType> = [
 ];
 
 export const BLOCK_TYPES_INDENT:Array<ToolbarButtonType> = [
-  { label: '->', style: 'indent', Icon: Indent, toggle: 'block' },
-  { label: '<-', style: 'outdent', Icon: Outdent, toggle: 'block' },
+  {
+    label: '->', style: 'indent', Icon: Indent, toggle: 'block',
+  },
+  {
+    label: '<-', style: 'outdent', Icon: Outdent, toggle: 'block',
+  },
 ];
