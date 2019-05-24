@@ -9,11 +9,13 @@ cache:
     - node_modules/
 
 lint:
+  stage: lint
   script:
     - yarn install
     - yarn lint
 
 test:
+  stag: test
   script:
     - yarn install
     - yarn test
