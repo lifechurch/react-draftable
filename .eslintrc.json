@@ -35,6 +35,7 @@
         "react/require-default-props": 0,
         "max-len": "off",
         "no-useless-return": "off",
-        "jsx-quotes": ["error","prefer-single"]
+        "jsx-quotes": ["error","prefer-single"],
+        "react/jsx-filename-extension": "off"
     }
 }

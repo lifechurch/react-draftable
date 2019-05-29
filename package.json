@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "yarn build:parcel && yarn build:flow",
-    "build:parcel": "cross-env NODE_ENV=production parcel build ./src/index.jsx --out-dir ./dist --out-file index.js --target node",
+    "build:parcel": "cross-env NODE_ENV=production parcel build ./src/index.js --out-dir ./dist --out-file index.js --target node",
     "build:flow": "flow-copy-source src dist",
     "commit": "git-cz",
     "flow": "flow",
