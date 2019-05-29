@@ -30,13 +30,10 @@ test:
 
 release:
   stage: release
-  variables:
-    GH_TOKEN: $GH_TOKEN
-    NPM_TOKEN: $NPM_TOKEN
   script:
     - yarn install --pure-lockfile
     - yarn build
-    - GH_TOKEN=$GH_TOKEN NPM_TOKEN=$NPM_TOKEN yarn semantic-release
+    - yarn semantic-release
   only:
     - master
 
