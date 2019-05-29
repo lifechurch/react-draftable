@@ -2,7 +2,9 @@ image: node:latest
 
 stages:
   - lint
+  - flow
   - test
+  - release
 
 cache:
   paths:
@@ -11,12 +13,27 @@ cache:
 lint:
   stage: lint
   script:
-    - yarn install
+    - yarn install --pure-lockfile
     - yarn lint
+
+flow:
+  stage: flow
+  script:
+    - yarn install --pure-lockfile
+    - yarn flow check
 
 test:
   stage: test
   script:
-    - yarn install
+    - yarn install --pure-lockfile
     - yarn test
+
+release:
+  stage: release
+  script:
+    - yarn install --pure-lockfile
+    - yarn build
+    - yarn semantic-release GH_TOKEN=$GH_TOKEN NPM_TOKEN=$NPM_TOKEN
+  only:
+    - master
 

@@ -1,15 +1,25 @@
 {
-  "name": "react-draftable",
+  "name": "@lifechurch/react-draftable",
   "version": "0.0.0-development",
   "description": "A simple, customizable rich text editor built on Draft.js",
-  "main": "dist/react-draftable.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
   "scripts": {
-    "build": "cross-env NODE_ENV=production parcel build ./src/index.js --out-dir ./dist --out-file react-draftable.js --target node",
-    "dev": "parcel ./src/index.html",
+    "build": "yarn build:parcel && yarn build:flow",
+    "build:parcel": "cross-env NODE_ENV=production parcel build ./src/index.jsx --out-dir ./dist --out-file index.js --target node",
+    "build:flow": "flow-copy-source src dist",
+    "commit": "git-cz",
     "flow": "flow",
     "lint": "eslint --ext .jsx,.js src/",
     "test": "jest",
-    "semantic-release": "semantic-release"
+    "test:coverage": "jest --collect-coverage",
+    "semantic-release": "semantic-release",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "validate": "yarn test:coverage && yarn flow && yarn lint"
   },
   "repository": {
     "type": "git",
@@ -39,13 +49,21 @@
   "devDependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "@storybook/react": "^5.0.11",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-react-remove-properties": "^0.3.0",
     "commitizen": "^3.1.1",
     "cross-env": "^5.2.0",
     "cz-conventional-changelog": "2.1.0",
-    "draft-js": "^0.10.5",
+    "draft-js": "^0.11.0-beta2",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-flowtype": "^3.9.0",
@@ -53,17 +71,23 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.13.0",
     "flow-bin": "^0.98.1",
-    "husky": "^2.3.0",
+    "flow-copy-source": "^2.0.6",
+    "flow-inlinestyle": "^1.0.9",
     "jest": "^24.8.0",
+    "jest-transform-stub": "^2.0.0",
     "parcel-bundler": "^1.12.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-testing-library": "^7.0.1",
     "semantic-release": "^15.13.12",
-    "semantic-release-cli": "^5.1.0"
+    "sinon": "^7.3.2"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

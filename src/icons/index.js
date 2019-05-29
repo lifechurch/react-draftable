@@ -1,4 +1,4 @@
 // @flow
 export type IconProps = {
-  active: boolean,
+  color: string,
 };

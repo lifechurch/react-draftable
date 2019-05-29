@@ -5,8 +5,8 @@ import { stateFromHTML } from 'draft-js-import-html';
 import { stateToMarkdown } from 'draft-js-export-markdown';
 import { stateFromMarkdown } from 'draft-js-import-markdown';
 
-const FORMAT_HTML = 'html';
-const FORMAT_MARKDOWN = 'markdown';
+export const FORMAT_HTML = 'html';
+export const FORMAT_MARKDOWN = 'markdown';
 
 type FormatType = typeof FORMAT_HTML | typeof FORMAT_MARKDOWN;
 

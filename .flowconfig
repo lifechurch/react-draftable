@@ -4,6 +4,8 @@
 [include]
 
 [libs]
+flow-typed
+node_modules/flow-inlinestyle/index.js
 
 [lints]
 
@@ -18,3 +20,6 @@ untyped-type-import
 sketchy-null
 
 [untyped]
+.*/node_modules/draft-js/lib/convertFromHTMLToContentBlocks.js.flow
+.*/node_modules/draft-js/lib/DraftEditorDragHandler.js.flow
+.*/node_modules/draft-js/lib/DraftEditor.react.js.flow

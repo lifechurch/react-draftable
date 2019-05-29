@@ -1,10 +1,12 @@
 // @flow
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
 import {
-  Editor, EditorState, RichUtils, Modifier,
+  Editor,
+  EditorState,
+  RichUtils,
+  Modifier,
+  getDefaultKeyBinding,
 } from 'draft-js';
-import type { DraftEditorCommand } from 'draft-js/lib/DraftEditorCommand';
 import Toolbar, { defaultToolbarConfig, type ToolbarConfigType } from './toolbar';
 import 'draft-js/dist/Draft.css';
 import type { ToolbarButtonType } from './toolbarButton';
@@ -34,16 +36,16 @@ const Draftable = (
   };
 
   // Handle keyboard shortcuts (i.e. - Cmd + B, Cmd + z)
-  const handleKeyCommand = (command:DraftEditorCommand, keyCommandState:EditorState) => {
+  const handleKeyCommand = (command:string, keyCommandState:EditorState) => {
     const newState = RichUtils.handleKeyCommand(keyCommandState, command);
     if (newState) {
       handleChange(newState);
       return 'handled';
     }
-    return 'unhandled';
+    return 'not-handled';
   };
 
-  const handleTab = (event) => {
+  const handleTab = (event: SyntheticKeyboardEvent<*>) => {
     event.preventDefault();
     const selection = editorState.getSelection();
     const blockType = editorState.getCurrentContent().getBlockForKey(selection.getStartKey()).getType();
@@ -60,16 +62,26 @@ const Draftable = (
     }
   };
 
+  const handleKeyBinding = (event: SyntheticKeyboardEvent<*>) => {
+    if (event.keyCode === 9) {
+      handleTab(event);
+    }
+
+    return getDefaultKeyBinding(event);
+  };
+
   const handleToolbarButton = (item:ToolbarButtonType) => {
-    switch (item.toggle) {
-      case 'inline':
-        setEditorState(RichUtils.toggleInlineStyle(editorState, item.style));
-        return;
-      case 'block':
-        setEditorState(RichUtils.toggleBlockType(editorState, item.style));
-        return;
-      default:
-        return;
+    if (item.type === 'style') {
+      switch (item.toggle) {
+        case 'inline':
+          setEditorState(RichUtils.toggleInlineStyle(editorState, item.style));
+          return;
+        case 'block':
+          setEditorState(RichUtils.toggleBlockType(editorState, item.style));
+          return;
+        default:
+          return;
+      }
     }
   };
 
@@ -80,15 +92,10 @@ const Draftable = (
         editorState={editorState}
         handleKeyCommand={handleKeyCommand}
         onChange={handleChange}
-        onTab={handleTab}
+        keyBindingFn={handleKeyBinding}
       />
     </>
   );
 };
 
-ReactDOM.render(<Draftable />, document.getElementById('root'));
-
-// Hot Module Replacement
-if (module.hot) {
-  module.hot.accept();
-}
+export default Draftable;
