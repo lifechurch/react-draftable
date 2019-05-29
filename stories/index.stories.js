@@ -1,19 +1,30 @@
 import React from 'react';
-
+import Draftable from '../src';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
+import BoldIcon from '../src/icons/TextBold';
 
-import { Button, Welcome } from '@storybook/react/demo';
-
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
-
-storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-  ));
+storiesOf('Draftable', module)
+  .add('with default config', () => <Draftable />)
+  .add('with custom styles', () => {
+    const toolbarConfig = {
+      groups: [
+        {
+          key: 'custom',
+          customStyles: {
+            marginLeft: 'auto'
+          }
+        }
+      ],
+      custom: [
+        {
+          label: 'Custom',
+          Icon: BoldIcon,
+          type: 'custom',
+          action: () => alert('test'),
+        },
+      ]
+    };
+    return (
+      <Draftable toolbarConfig={toolbarConfig} />
+    );
+  });
