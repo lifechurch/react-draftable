@@ -15,8 +15,16 @@
     display: flex;
 }
 
-.ToolbarGroup-root:not(:first-of-type):not(:last-of-type) {
-    margin: 0 24px;
+.ToolbarGroup-root {
+    margin: 0 12px;
+}
+
+.ToolbarGroup-root:first-of-type {
+    margin-left: 0;
+}
+
+.ToolbarGroup-root:last-of-type {
+    margin-right: 0;
 }
 
 .ToolbarButton-root {
