@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Draftable from '../src';
+import { Draftable } from '../src';
 import BoldIcon from '../src/icons/TextBold';
 
 storiesOf('Draftable', module)

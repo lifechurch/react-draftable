@@ -1,11 +1,10 @@
 // @flow
 import React  from 'react';
-import Draftable from '../src';
+import { Draftable } from '../src';
 import BoldIcon from '../src/icons/TextBold';
 import sinon from 'sinon';
 import { render, fireEvent } from 'react-testing-library';
 import { BLOCK_TYPES_INDENT, BLOCK_TYPES_INLINE, BLOCK_TYPES_LISTS } from '../src/lib/BlockTypes';
-import DraftableState, { FORMAT_HTML } from '../src/lib/DraftableState';
 
 
 describe('Draftable', () => {
