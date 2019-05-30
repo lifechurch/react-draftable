@@ -1,6 +1,5 @@
 // @flow
 import React from 'react';
-import './styles.css';
 import { EditorState } from 'draft-js';
 import ToolbarButton, { type ToolbarButtonType } from '../toolbarButton';
 

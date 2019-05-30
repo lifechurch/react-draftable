@@ -1,0 +1,31 @@
+@import '~draft-js/dist/Draft.css';
+
+.public-DraftEditor-content {
+    font-family: "Helvetica Neue", Helvetica, "Arial Nova", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+.Toolbar-root {
+    display: flex;
+    margin: 14px 0;
+}
+
+.ToolbarGroup-root {
+    display: flex;
+}
+
+.ToolbarGroup-root:not(:first-of-type):not(:last-of-type) {
+    margin: 0 14px;
+}
+
+.ToolbarButton-root {
+    border: none;
+    background: none;
+    margin: 0 8px;
+    padding: 0;
+}
+
+.ToolbarButton-root:first-of-type {
+    margin-left: 0;
+}

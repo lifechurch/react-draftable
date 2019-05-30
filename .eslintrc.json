@@ -32,10 +32,19 @@
         }
     },
     "rules": {
-        "react/require-default-props": 0,
+        "jsx-quotes": ["error","prefer-single"],
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": [
+                    ".storybook/**",
+                    "stories/**"
+                ]
+            }
+        ],
         "max-len": "off",
         "no-useless-return": "off",
-        "jsx-quotes": ["error","prefer-single"],
-        "react/jsx-filename-extension": "off"
+        "react/jsx-filename-extension": "off",
+        "react/require-default-props": 0
     }
 }

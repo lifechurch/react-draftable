@@ -4,7 +4,7 @@ import Draftable from '../src';
 import BoldIcon from '../src/icons/TextBold';
 import sinon from 'sinon';
 import { render, fireEvent } from 'react-testing-library';
-import { BLOCK_TYPES_INLINE, BLOCK_TYPES_LISTS } from '../src/lib/BlockTypes';
+import { BLOCK_TYPES_INDENT, BLOCK_TYPES_INLINE, BLOCK_TYPES_LISTS } from '../src/lib/BlockTypes';
 import DraftableState, { FORMAT_HTML } from '../src/lib/DraftableState';
 
 
@@ -44,7 +44,7 @@ describe('Draftable', () => {
             label: 'Custom',
             Icon: BoldIcon,
             type: 'custom',
-            action: action,
+            action,
           },
         ]
       }} />
@@ -65,4 +65,27 @@ describe('Draftable', () => {
     fireEvent.click(getByTestId('toolbarButton-BOLD'));
     // TODO: Figure out how to validate that this updates the editor content
   });
+
+  test('Calls indent actions', () => {
+    const { getByTestId } = render(
+      <Draftable toolbarConfig={{
+        groups: [{ key:'indent' }],
+        indent: BLOCK_TYPES_INDENT,
+      }} />
+    );
+    fireEvent.click(getByTestId('toolbarButton-indent'));
+    // TODO: Figure out how to validate that this updates the editor content
+  });
+
+  test('Calls list actions', () => {
+    const { getByTestId } = render(
+      <Draftable toolbarConfig={{
+        groups: [{ key:'lists' }],
+        lists: BLOCK_TYPES_LISTS,
+      }} />
+    );
+    fireEvent.click(getByTestId('toolbarButton-unordered-list-item'));
+    // TODO: Figure out how to validate that this updates the editor content
+  });
+
 });

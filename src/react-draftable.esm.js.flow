@@ -1,0 +1,2 @@
+// @flow
+import * as Draftable from '../src'; /* eslint-disable-line */

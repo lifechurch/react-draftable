@@ -1,13 +1,12 @@
 // @flow
 import React, { type ComponentType } from 'react';
-import './styles.css';
 
 export type StyleButtonType = {
   label: string,
   style: string,
   Icon: ComponentType<any>,
   type: 'style',
-  toggle: 'inline' | 'block',
+  toggle: 'inline' | 'block' | 'indent',
 };
 
 export type CustomButtonType = {
@@ -31,14 +30,12 @@ export default ({ item, active, onChange }:ToolbarButtonProps) => {
   const { Icon } = item;
 
   const handleToggle = () => {
-    if (item.type !== 'custom') {
+    if (item.type === 'custom') {
+      item.action();
+    } else {
       onChange(item);
     }
   };
-
-  if (item.type === 'custom') {
-    item.action();
-  }
 
   const iconColor = active ? '#404041' : '#9F9FA0';
 

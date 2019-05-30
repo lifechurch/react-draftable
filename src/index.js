@@ -7,9 +7,12 @@ import {
   Modifier,
   getDefaultKeyBinding,
 } from 'draft-js';
+import './styles.css';
+import './lib/DraftableState';
 import Toolbar, { defaultToolbarConfig, type ToolbarConfigType } from './toolbar';
-import 'draft-js/dist/Draft.css';
 import type { ToolbarButtonType } from './toolbarButton';
+import changeBlockDepth from './lib/changeBlockDepth';
+
 
 type DraftableProps = {
   initialState?: EditorState,
@@ -79,6 +82,18 @@ const Draftable = (
         case 'block':
           setEditorState(RichUtils.toggleBlockType(editorState, item.style));
           return;
+        case 'indent': {
+          const selection = editorState.getSelection();
+          if (selection.isCollapsed()) {
+            const content = editorState.getCurrentContent();
+            const blockKey = selection.getStartKey();
+            const block = content.getBlockForKey(blockKey);
+            const depth = block.getDepth();
+            const newState = changeBlockDepth(editorState, blockKey, depth + (item.style === 'indent' ? 1 : -1));
+            setEditorState(newState);
+          }
+          break;
+        }
         default:
           return;
       }

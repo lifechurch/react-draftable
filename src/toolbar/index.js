@@ -1,6 +1,5 @@
 // @flow
 import React from 'react';
-import './styles.css';
 import { EditorState } from 'draft-js';
 import ToolbarGroup, { type ToolbarGroupType } from '../toolbarGroup';
 import type { ToolbarButtonType } from '../toolbarButton';
@@ -34,7 +33,13 @@ export default ({ editorState, toolbarConfig, onChange }:ToolbarProps) => {
     <div data-testid='toolbar' className='Toolbar-root'>
       {
         toolbarConfig.groups.map(group => (
-          <ToolbarGroup key={group.key} items={toolbarConfig[group.key]} onChange={handleToggle} customStyles={group.customStyles} editorState={editorState} />
+          <ToolbarGroup
+            key={group.key}
+            items={toolbarConfig[group.key]}
+            onChange={handleToggle}
+            customStyles={group.customStyles}
+            editorState={editorState}
+          />
         ))
       }
     </div>

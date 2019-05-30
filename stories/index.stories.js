@@ -1,6 +1,6 @@
 import React from 'react';
-import Draftable from '../src';
 import { storiesOf } from '@storybook/react';
+import Draftable from '../src';
 import BoldIcon from '../src/icons/TextBold';
 
 storiesOf('Draftable', module)
@@ -11,18 +11,18 @@ storiesOf('Draftable', module)
         {
           key: 'custom',
           customStyles: {
-            marginLeft: 'auto'
-          }
-        }
+            marginLeft: 'auto',
+          },
+        },
       ],
       custom: [
         {
           label: 'Custom',
           Icon: BoldIcon,
           type: 'custom',
-          action: () => alert('test'),
+          action: () => alert('Success!'),
         },
-      ]
+      ],
     };
     return (
       <Draftable toolbarConfig={toolbarConfig} />
