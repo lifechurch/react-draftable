@@ -32,9 +32,9 @@ export const BLOCK_TYPES_LISTS:Array<ToolbarButtonType> = [
 
 export const BLOCK_TYPES_INDENT:Array<ToolbarButtonType> = [
   {
-    label: '->', style: 'indent', Icon: Indent, toggle: 'indent', type: 'style',
+    label: '<-', style: 'outdent', Icon: Outdent, toggle: 'indent', type: 'style',
   },
   {
-    label: '<-', style: 'outdent', Icon: Outdent, toggle: 'indent', type: 'style',
+    label: '->', style: 'indent', Icon: Indent, toggle: 'indent', type: 'style',
   },
 ];

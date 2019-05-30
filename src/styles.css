@@ -16,13 +16,13 @@
 }
 
 .ToolbarGroup-root:not(:first-of-type):not(:last-of-type) {
-    margin: 0 14px;
+    margin: 0 24px;
 }
 
 .ToolbarButton-root {
     border: none;
     background: none;
-    margin: 0 8px;
+    margin: 0 4px;
     padding: 0;
 }
 
