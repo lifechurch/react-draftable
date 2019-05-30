@@ -11,12 +11,12 @@ export const FORMAT_MARKDOWN = 'markdown';
 type FormatType = typeof FORMAT_HTML | typeof FORMAT_MARKDOWN;
 
 export default class DraftableState {
-  static createFromString(markup: string, format: FormatType) {
+  static createFromString(markup: string, format: FormatType):EditorState {
     switch (format) {
       case FORMAT_HTML:
-        return stateFromHTML(markup);
+        return EditorState.createWithContent(stateFromHTML(markup));
       case FORMAT_MARKDOWN:
-        return stateFromMarkdown(markup);
+        return EditorState.createWithContent(stateFromMarkdown(markup));
       default:
         throw new Error(`Format not supported: ${format}`);
     }
@@ -25,9 +25,9 @@ export default class DraftableState {
   static toString(editorState:EditorState, format: FormatType):string {
     switch (format) {
       case FORMAT_HTML:
-        return stateToHTML(editorState);
+        return stateToHTML(editorState.getCurrentContent());
       case FORMAT_MARKDOWN:
-        return stateToMarkdown(editorState);
+        return stateToMarkdown(editorState.getCurrentContent());
       default:
         throw new Error(`Format not supported: ${format}`);
     }

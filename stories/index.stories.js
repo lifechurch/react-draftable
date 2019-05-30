@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Draftable } from '../src';
+import { Draftable, DraftableState } from '../src';
 import BoldIcon from '../src/icons/TextBold';
 
 storiesOf('Draftable', module)
@@ -26,5 +26,11 @@ storiesOf('Draftable', module)
     };
     return (
       <Draftable toolbarConfig={toolbarConfig} />
+    );
+  })
+  .add('with initial state', () => {
+    const initialState = DraftableState.createFromString('<p>Test <b>bolded</b></p>', 'html');
+    return (
+      <Draftable initialState={initialState} />
     );
   });

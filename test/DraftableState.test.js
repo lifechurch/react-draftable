@@ -7,8 +7,8 @@ describe('DraftableState', () => {
 
   test('Converts HTML to DraftJS state', () => {
     const convertedHTML = DraftableState.createFromString(HTML, FORMAT_HTML);
-    expect(convertedHTML.hasText()).toBeTruthy();
-    expect(convertedHTML.getPlainText()).toEqual('Test Document\nThis is the text I would like to initialize state with.');
+    expect(convertedHTML.getCurrentContent().hasText()).toBeTruthy();
+    expect(convertedHTML.getCurrentContent().getPlainText()).toEqual('Test Document\nThis is the text I would like to initialize state with.');
   });
 
   test('Converts DraftJS state to HTML', () => {
@@ -18,8 +18,8 @@ describe('DraftableState', () => {
 
   test('Converts Markdown to DraftJS state', () => {
     const convertedHTML = DraftableState.createFromString(MARKDOWN, FORMAT_MARKDOWN);
-    expect(convertedHTML.hasText()).toBeTruthy();
-    expect(convertedHTML.getPlainText()).toEqual('Test Document\nThis is the text I would like to initialize state with.');
+    expect(convertedHTML.getCurrentContent().hasText()).toBeTruthy();
+    expect(convertedHTML.getCurrentContent().getPlainText()).toEqual('Test Document\nThis is the text I would like to initialize state with.');
   });
 
   test('Converts DraftJS state to Markdown', () => {
