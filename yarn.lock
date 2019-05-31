@@ -4059,7 +4059,7 @@ crypto-random-string@^1.0.0:
   resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-1.0.0.tgz#a230f64f568310e1498009940790ec99545bca7e"
   integrity sha1-ojD2T1aDEOFJgAmUB5DsmVRbyn4=
 
-css-loader@^2.1.0, css-loader@^2.1.1:
+css-loader@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-2.1.1.tgz#d8254f72e412bb2238bb44dd674ffbef497333ea"
   integrity sha512-OcKJU/lt232vl1P9EEDamhoO9iKY3tIjY5GU+XDLblAykTdgs6Ux9P1hTHve8nFKy5KPpOXOsVI/hIwi3841+w==
@@ -5478,11 +5478,6 @@ flow-bin@^0.98.1:
   version "0.98.1"
   resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.98.1.tgz#a8d781621c91703df69928acc83c9777e2fcbb49"
   integrity sha512-y1YzQgbFUX4EG6h2EO8PhyJeS0VxNgER8XsTwU8IXw4KozfneSmGVgw8y3TwAOza7rVhTlHEoli1xNuNW1rhPw==
-
-flow-inlinestyle@^1.0.9:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/flow-inlinestyle/-/flow-inlinestyle-1.0.9.tgz#d760c4dd0abb7b02efb8c0e800a072ad3ca10c31"
-  integrity sha512-G46vIUeYD2TZuheeZpf0GdK0Y7hebbcHOgf2Uew/nVi3cyRW2MRt/UijgFpcMT5V0qJDS0LFvBiU5dMOhUf65g==
 
 flush-write-stream@^1.0.0:
   version "1.1.1"

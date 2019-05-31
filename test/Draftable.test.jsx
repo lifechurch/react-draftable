@@ -25,7 +25,7 @@ describe('Draftable', () => {
   test('Renders with provided config', () => {
     const { queryAllByTestId } = render(
       <Draftable toolbarConfig={{
-        groups: [{ key: 'inline' }, { key: 'lists' }],
+        groups: ['inline', 'lists'],
         inline: BLOCK_TYPES_INLINE,
         lists: BLOCK_TYPES_LISTS,
       }} />
@@ -37,7 +37,7 @@ describe('Draftable', () => {
     const action = sinon.spy();
     const { getByTestId } = render(
       <Draftable toolbarConfig={{
-        groups: [{ key: 'custom' }],
+        groups: ['custom'],
         custom: [
           {
             label: 'Custom',
@@ -57,7 +57,7 @@ describe('Draftable', () => {
   test('Calls style actions', () => {
     const { getByTestId } = render(
       <Draftable toolbarConfig={{
-        groups: [{ key:'inline' }],
+        groups: ['inline'],
         inline: BLOCK_TYPES_INLINE,
       }} />
     );
@@ -68,7 +68,7 @@ describe('Draftable', () => {
   test('Calls indent actions', () => {
     const { getByTestId } = render(
       <Draftable toolbarConfig={{
-        groups: [{ key:'indent' }],
+        groups: ['indent'],
         indent: BLOCK_TYPES_INDENT,
       }} />
     );
@@ -79,7 +79,7 @@ describe('Draftable', () => {
   test('Calls list actions', () => {
     const { getByTestId } = render(
       <Draftable toolbarConfig={{
-        groups: [{ key:'lists' }],
+        groups: ['lists'],
         lists: BLOCK_TYPES_LISTS,
       }} />
     );
