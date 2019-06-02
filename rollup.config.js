@@ -3,7 +3,6 @@ import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import css from 'rollup-plugin-css-only';
 import autoExternal from 'rollup-plugin-auto-external';
-import copy from 'rollup-plugin-copy';
 import pkg from './package.json';
 
 const commonPlugins = [
@@ -11,12 +10,6 @@ const commonPlugins = [
   autoExternal(),
   resolve(),
   css({ output: 'dist/react-draftable.css' }),
-  copy({
-    targets: [
-      'src/react-draftable.esm.js.flow',
-    ],
-    outputFolder: 'dist',
-  }),
 ];
 
 export default [

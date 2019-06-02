@@ -26,11 +26,12 @@ export const defaultToolbarConfig:ToolbarConfigType = {
 export default ({ editorState, toolbarConfig, onChange }:ToolbarProps) => {
   const handleToggle = item => onChange(item);
   return (
-    <div data-testid='toolbar' className='Toolbar-root'>
+    <div data-testid='toolbar' className='toolbar'>
       {
         toolbarConfig.groups.map(group => (
           <ToolbarGroup
             key={group}
+            name={group}
             items={toolbarConfig[group]}
             onChange={handleToggle}
             editorState={editorState}

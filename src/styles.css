@@ -6,34 +6,31 @@
     line-height: 1.25;
 }
 
-.Toolbar-root {
+.toolbar {
     display: flex;
     margin: 14px 0;
 }
 
-.ToolbarGroup-root {
+.toolbarGroup {
     display: flex;
-}
-
-.ToolbarGroup-root {
     margin: 0 12px;
 }
 
-.ToolbarGroup-root:first-of-type {
+.toolbarGroup:first-of-type {
     margin-left: 0;
 }
 
-.ToolbarGroup-root:last-of-type {
+.toolbarGroup:last-of-type {
     margin-right: 0;
 }
 
-.ToolbarButton-root {
+.toolbarButton {
     border: none;
     background: none;
     margin: 0 4px;
     padding: 0;
 }
 
-.ToolbarButton-root:first-of-type {
+.toolbarButton:first-of-type {
     margin-left: 0;
 }

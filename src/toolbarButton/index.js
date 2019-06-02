@@ -38,9 +38,10 @@ export default ({ item, active, onChange }:ToolbarButtonProps) => {
   };
 
   const iconColor = active ? '#404041' : '#9F9FA0';
+  const buttonType = item.type === 'style' ? item.style : 'custom';
 
   return (
-    <button data-testid={`toolbarButton-${item.type === 'style' ? item.style : 'custom'}`} type='button' className='ToolbarButton-root' onClick={handleToggle}>
+    <button data-testid={`toolbarButton-${buttonType}`} type='button' className={`toolbarButton toolbarButton-${buttonType}`} onClick={handleToggle}>
       <Icon color={iconColor} />
     </button>
   );
