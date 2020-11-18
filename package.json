@@ -86,7 +86,7 @@
     "rollup-plugin-multi-entry": "^2.1.0",
     "rollup-plugin-node-globals": "^1.4.0",
     "rollup-plugin-node-resolve": "^5.0.0",
-    "semantic-release": "^15.13.12",
+    "semantic-release": "^17.2.3",
     "sinon": "^7.3.2"
   },
   "config": {
