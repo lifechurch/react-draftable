@@ -10750,15 +10750,6 @@ rollup-plugin-commonjs@^10.0.0:
     resolve "^1.10.1"
     rollup-pluginutils "^2.7.0"
 
-rollup-plugin-copy@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-copy/-/rollup-plugin-copy-2.0.1.tgz#2a45e45be84a0d4054d1774604044e7f7581fdae"
-  integrity sha512-IE+Ob5k1Pi/DLi8SlFcf9jN1m2p0ovIwMuz0GM5NeQeV14puW/bCUpmXlqVtQVy+ErXOhZEeBaqinJ0xnJdxKg==
-  dependencies:
-    chalk "^2.4.2"
-    fs-extra "^7.0.1"
-    is-plain-object "^3.0.0"
-
 rollup-plugin-css-only@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/rollup-plugin-css-only/-/rollup-plugin-css-only-1.0.0.tgz#dc027d657d02e7706b855d856dcb0fdd49935135"
@@ -12688,9 +12679,9 @@ xtend@^4.0.0, xtend@^4.0.1, xtend@~4.0.1:
   integrity sha1-pcbVMr5lbiPbgg77lDofBJmNY68=
 
 y18n@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
-  integrity sha1-bRX7qITAhnnA136I53WegR4H+kE=
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.2.tgz#85c901bd6470ce71fc4bb723ad209b70f7f28696"
+  integrity sha512-uGZHXkHnhF0XeeAPgnKfPv1bgKAYyVvmNL1xlKsPYZPaIHxGti2hHqvOCQv71XMsLxu1QjergkqogUnms5D3YQ==
 
 "y18n@^3.2.1 || ^4.0.0", y18n@^4.0.0:
   version "4.0.0"
