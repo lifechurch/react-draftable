@@ -4257,9 +4257,9 @@ decamelize@^1.1.0, decamelize@^1.1.1, decamelize@^1.2.0:
   integrity sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=
 
 decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
-  integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
+  integrity sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==
 
 dedent@0.7.0:
   version "0.7.0"
@@ -10749,15 +10749,6 @@ rollup-plugin-commonjs@^10.0.0:
     magic-string "^0.25.2"
     resolve "^1.10.1"
     rollup-pluginutils "^2.7.0"
-
-rollup-plugin-copy@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-copy/-/rollup-plugin-copy-2.0.1.tgz#2a45e45be84a0d4054d1774604044e7f7581fdae"
-  integrity sha512-IE+Ob5k1Pi/DLi8SlFcf9jN1m2p0ovIwMuz0GM5NeQeV14puW/bCUpmXlqVtQVy+ErXOhZEeBaqinJ0xnJdxKg==
-  dependencies:
-    chalk "^2.4.2"
-    fs-extra "^7.0.1"
-    is-plain-object "^3.0.0"
 
 rollup-plugin-css-only@^1.0.0:
   version "1.0.0"
